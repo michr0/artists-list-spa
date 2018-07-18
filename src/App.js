@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Grid from '@material-ui/core/Grid';
+import SearchBox from './components/SearchBox/SearchBox';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            artist: null,
+            eventsList: null,
+        };
+
+        this.changeArtist = this.changeArtist.bind(this);
+        this.changeEventsList = this.changeEventsList.bind(this);
+    }
+
+    changeArtist(artist) {
+        this.setState({ artist });
+    }
+
+    changeEventsList(eventsList) {
+        this.setState({ eventsList });
+    }
+
+    render() {
+        return (
+            <Grid container spacing={24}>
+                <Grid item xs={12}>
+                    <SearchBox changeArtist={this.changeArtist} />
+                </Grid>
+            </Grid>
+        );
+    }
 }
 
 export default App;
