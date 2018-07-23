@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import SearchBox from './components/SearchBox/SearchBox';
+import ArtistCard from './components/ArtistCard/ArtistCard';
 
 class App extends Component {
     constructor(props) {
@@ -24,10 +25,14 @@ class App extends Component {
     }
 
     render() {
+        const { artist } = this.state;
         return (
             <Grid container spacing={24}>
                 <Grid item xs={12}>
                     <SearchBox changeArtist={this.changeArtist} />
+                </Grid>
+                <Grid item xs={12}>
+                    <ArtistCard artist={artist} />
                 </Grid>
             </Grid>
         );

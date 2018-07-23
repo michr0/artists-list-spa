@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import TextField from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
+import FormHelperText from '@material-ui/core/FormHelperText';
 import { requestHelper } from '../../service';
+
+import './style.css';
 
 class SearchBox extends Component {
     constructor(props) {
@@ -11,10 +16,12 @@ class SearchBox extends Component {
 
         this.state = {
             query: '',
+            error: false,
+            loading: false,
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSearch= this.handleSearch.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     handleInputChange(e) {
@@ -25,29 +32,54 @@ class SearchBox extends Component {
         const { query } = this.state;
         const { changeArtist } = this.props;
 
+        this.setState({
+            loading: true,
+            error: false,
+        });
+
         requestHelper.getArtistInformation(query)
             .then(
                 ({ data }) => {
                     if (data !== '') {
                         changeArtist(data);
+                    } else {
+                        this.setState({ error: true });
                     }
                 },
-            );
-    };
+                (() => {
+                    this.setState({ error: true });
+                }),
+            )
+            .finally(() => {
+                this.setState({ loading: false });
+            });
+    }
 
     render() {
-        const { query } = this.state;
+        const { query, error, loading } = this.state;
         return (
-            <div>
-                <TextField
-                    id="searchValue"
-                    label="Artist"
-                    margin="normal"
-                    value={query}
-                    onChange={this.handleInputChange}
-                    fullWidth
-                />
-                <Button variant="contained" size="large" color="primary" onClick={this.handleSearch}>
+            <div className="searchBox">
+                <FormControl error={error} fullWidth margin="normal">
+                    <InputLabel htmlFor="searchValue">
+                        Artist
+                    </InputLabel>
+                    <Input id="searchValue" value={query} onChange={this.handleInputChange} />
+                    {
+                        error
+                        && (
+                            <FormHelperText id="searchValueHelperText">
+                                Could not find anything...Please try again
+                            </FormHelperText>
+                        )
+                    }
+                </FormControl>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={this.handleSearch}
+                    disabled={loading}
+                    size="large"
+                >
                     Search
                 </Button>
             </div>
