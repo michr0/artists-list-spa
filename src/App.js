@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
+import Fade from '@material-ui/core/Fade';
+
 import SearchBox from './components/SearchBox/SearchBox';
 import ArtistCard from './components/ArtistCard/ArtistCard';
+
+import { requestHelper } from './service';
 
 class App extends Component {
     constructor(props) {
@@ -12,16 +16,22 @@ class App extends Component {
             eventsList: null,
         };
 
-        this.changeArtist = this.changeArtist.bind(this);
-        this.changeEventsList = this.changeEventsList.bind(this);
+        this.onSuccessfulSearch = this.onSuccessfulSearch.bind(this);
     }
 
-    changeArtist(artist) {
+    onSuccessfulSearch(artist) {
         this.setState({ artist });
-    }
 
-    changeEventsList(eventsList) {
-        this.setState({ eventsList });
+        if (artist.upcoming_event_count > 0) {
+            requestHelper.getArtistEvents(artist.name)
+                .then(
+                    ({ data }) => {
+                        if (data !== '') {
+                            this.setState({ eventsList: data });
+                        }
+                    },
+                );
+        }
     }
 
     render() {
@@ -29,11 +39,18 @@ class App extends Component {
         return (
             <Grid container spacing={24}>
                 <Grid item xs={12}>
-                    <SearchBox changeArtist={this.changeArtist} />
+                    <SearchBox onSuccess={this.onSuccessfulSearch} />
                 </Grid>
-                <Grid item xs={12}>
-                    <ArtistCard artist={artist} />
-                </Grid>
+                {
+                    artist !== null
+                    && (
+                        <Fade in={artist !== null}>
+                            <Grid item xs={12}>
+                                <ArtistCard artist={artist} />
+                            </Grid>
+                        </Fade>
+                    )
+                }
             </Grid>
         );
     }

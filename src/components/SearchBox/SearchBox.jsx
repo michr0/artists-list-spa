@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -8,7 +8,11 @@ import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { requestHelper } from '../../service';
 
-import './style.css';
+const styles = {
+    searchBox: {
+        textAlign: 'center',
+    },
+};
 
 class SearchBox extends Component {
     constructor(props) {
@@ -30,7 +34,7 @@ class SearchBox extends Component {
 
     handleSearch() {
         const { query } = this.state;
-        const { changeArtist } = this.props;
+        const { onSuccess } = this.props;
 
         this.setState({
             loading: true,
@@ -41,7 +45,7 @@ class SearchBox extends Component {
             .then(
                 ({ data }) => {
                     if (data !== '') {
-                        changeArtist(data);
+                        onSuccess(data);
                     } else {
                         this.setState({ error: true });
                     }
@@ -57,8 +61,9 @@ class SearchBox extends Component {
 
     render() {
         const { query, error, loading } = this.state;
+        const { classes } = this.props;
         return (
-            <div className="searchBox">
+            <div className={classes.searchBox}>
                 <FormControl error={error} fullWidth margin="normal">
                     <InputLabel htmlFor="searchValue">
                         Artist
@@ -88,7 +93,8 @@ class SearchBox extends Component {
 }
 
 SearchBox.propTypes = {
-    changeArtist: PropTypes.func.isRequired,
+    onSuccess: PropTypes.func.isRequired,
+    classes: PropTypes.object.isRequired,
 };
 
-export default SearchBox;
+export default withStyles(styles)(SearchBox);
