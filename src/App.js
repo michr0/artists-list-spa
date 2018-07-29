@@ -4,6 +4,7 @@ import Fade from '@material-ui/core/Fade';
 
 import SearchBox from './components/SearchBox/SearchBox';
 import ArtistCard from './components/ArtistCard/ArtistCard';
+import EventsList from './components/EventsList/EventsList';
 
 import { requestHelper } from './service';
 
@@ -28,14 +29,18 @@ class App extends Component {
                     ({ data }) => {
                         if (data !== '') {
                             this.setState({ eventsList: data });
+                        } else {
+                            this.setState({ eventsList: null });
                         }
                     },
                 );
+        } else {
+            this.setState({ eventsList: null });
         }
     }
 
     render() {
-        const { artist } = this.state;
+        const { artist, eventsList } = this.state;
         return (
             <Grid container spacing={24}>
                 <Grid item xs={12}>
@@ -47,6 +52,16 @@ class App extends Component {
                         <Fade in={artist !== null}>
                             <Grid item xs={12}>
                                 <ArtistCard artist={artist} />
+                            </Grid>
+                        </Fade>
+                    )
+                }
+                {
+                    eventsList !== null
+                    && (
+                        <Fade in={eventsList !== null}>
+                            <Grid item xs={12}>
+                                <EventsList eventsList={eventsList} />
                             </Grid>
                         </Fade>
                     )

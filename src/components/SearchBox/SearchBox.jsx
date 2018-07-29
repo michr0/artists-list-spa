@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -8,11 +7,7 @@ import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { requestHelper } from '../../service';
 
-const styles = {
-    searchBox: {
-        textAlign: 'center',
-    },
-};
+import './style.css';
 
 class SearchBox extends Component {
     constructor(props) {
@@ -61,9 +56,8 @@ class SearchBox extends Component {
 
     render() {
         const { query, error, loading } = this.state;
-        const { classes } = this.props;
         return (
-            <div className={classes.searchBox}>
+            <div className="searchBox">
                 <FormControl error={error} fullWidth margin="normal">
                     <InputLabel htmlFor="searchValue">
                         Artist
@@ -94,7 +88,6 @@ class SearchBox extends Component {
 
 SearchBox.propTypes = {
     onSuccess: PropTypes.func.isRequired,
-    classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SearchBox);
+export default SearchBox;

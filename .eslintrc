@@ -1,5 +1,9 @@
 {
   "extends": "airbnb",
+  "env": {
+    "jest": true,
+    "browser": true
+  },
   "rules": {
     // Indent with 4 spaces
     "indent": ["error", 4],
