@@ -1,0 +1,11 @@
+@import "../../config";
+
+.card {
+  display: flex;
+
+
+  &__cover {
+    height: 151px;
+    width: 151px;
+  }
+}

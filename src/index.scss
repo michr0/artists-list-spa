@@ -1,5 +1,7 @@
+@import './config';
+
 body {
-  margin: 12px;
+  margin: $margin;
   padding: 0;
   font-family: sans-serif;
 }

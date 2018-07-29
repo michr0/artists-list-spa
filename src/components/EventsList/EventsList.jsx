@@ -1,18 +1,14 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 
-const styles = {
-    ticketButtons: {
-        marginBottom: 24,
-    },
-};
+import './style.scss';
 
 class EventsList extends PureComponent {
     renderOffer(offer, eventId, index) {
@@ -29,8 +25,6 @@ class EventsList extends PureComponent {
     }
 
     renderEvent(event) {
-        const { classes } = this.props;
-
         return (
             <Grid item xs={12} key={event.id}>
                 <Typography component="p" align="left">
@@ -56,7 +50,7 @@ class EventsList extends PureComponent {
                 )}
                 {event.offers.length > 0
                 && (
-                    <div className={classes.ticketButtons}>
+                    <div className="ticketButton">
                         {event.offers.map(
                             (offer, index) => this.renderOffer(offer, event.id, index),
                         )}
@@ -71,10 +65,8 @@ class EventsList extends PureComponent {
         const { eventsList } = this.props;
         return (
             <Card>
+                <CardHeader title="25 Upcoming events" />
                 <CardContent>
-                    <Typography variant="headline" component="h2" align="center">
-                        Upcoming events
-                    </Typography>
                     <Grid container spacing={24}>
                         {eventsList.map(event => this.renderEvent(event))}
                     </Grid>
@@ -103,7 +95,6 @@ EventsList.propTypes = {
             }).isRequired,
         }),
     ).isRequired,
-    classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(EventsList);
+export default EventsList;

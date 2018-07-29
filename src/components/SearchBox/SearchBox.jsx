@@ -5,9 +5,9 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import { requestHelper } from '../../service';
+import service from '../../service';
 
-import './style.css';
+import './style.scss';
 
 class SearchBox extends Component {
     constructor(props) {
@@ -36,7 +36,7 @@ class SearchBox extends Component {
             error: false,
         });
 
-        requestHelper.getArtistInformation(query)
+        service.requestHelper.getArtistInformation(query)
             .then(
                 ({ data }) => {
                     if (data !== '') {

@@ -6,7 +6,7 @@ import SearchBox from './components/SearchBox/SearchBox';
 import ArtistCard from './components/ArtistCard/ArtistCard';
 import EventsList from './components/EventsList/EventsList';
 
-import { requestHelper } from './service';
+import service from './service';
 
 class App extends Component {
     constructor(props) {
@@ -24,7 +24,7 @@ class App extends Component {
         this.setState({ artist });
 
         if (artist.upcoming_event_count > 0) {
-            requestHelper.getArtistEvents(artist.name)
+            service.requestHelper.getArtistEvents(artist.name)
                 .then(
                     ({ data }) => {
                         if (data !== '') {

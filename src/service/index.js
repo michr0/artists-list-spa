@@ -1,5 +1,5 @@
 import requestHelper from './requestHelper';
 
-export {
+export default {
     requestHelper,
 };

@@ -1,0 +1,230 @@
+export default [
+    {
+        id: '1008179713',
+        artist_id: '1371750',
+        url: 'https://www.bandsintown.com/e/1008179713?app_id=asd&came_from=267',
+        on_sale_datetime: '',
+        datetime: '2018-08-02T03:30:00',
+        description: '',
+        venue: {
+            country: 'United States',
+            city: 'Chicago',
+            latitude: '41.85',
+            name: 'Hutchinson Field Grant Park',
+            region: 'Illinois',
+            longitude: '-87.65',
+        },
+        lineup: [
+            'The Weeknd',
+        ],
+        offers: [],
+    },
+    {
+        id: '1010243324',
+        artist_id: '1371750',
+        url: 'https://www.bandsintown.com/e/1010243324?app_id=asd&came_from=267',
+        on_sale_datetime: '',
+        datetime: '2018-08-04T19:00:53',
+        description: '',
+        venue: {
+            country: 'United States',
+            city: 'Chicago',
+            latitude: '41.85',
+            name: 'Lollapalooza',
+            region: 'IL',
+            longitude: '-87.65',
+        },
+        lineup: [
+            'The Weeknd',
+        ],
+        offers: [
+            {
+                type: 'Tickets',
+                url: 'https://www.bandsintown.com/t/1010243324?app_id=asd&came_from=267',
+                status: 'available',
+            },
+        ],
+    },
+    {
+        id: '1010243314',
+        artist_id: '1371750',
+        url: 'https://www.bandsintown.com/e/1010243314?app_id=asd&came_from=267',
+        on_sale_datetime: '',
+        datetime: '2018-08-10T19:00:34',
+        description: '',
+        venue: {
+            country: 'United States',
+            city: 'San Francisco',
+            latitude: '37.7694208',
+            name: 'Outside Lands Music Festival',
+            region: 'CA',
+            longitude: '-122.4862138',
+        },
+        lineup: [
+            'The Weeknd',
+        ],
+        offers: [
+            {
+                type: 'Tickets',
+                url: 'https://www.bandsintown.com/t/1010243314?app_id=asd&came_from=267',
+                status: 'available',
+            },
+        ],
+    },
+    {
+        id: '1010243338',
+        artist_id: '1371750',
+        url: 'https://www.bandsintown.com/e/1010243338?app_id=asd&came_from=267',
+        on_sale_datetime: '',
+        datetime: '2018-09-08T12:00:00',
+        description: '',
+        venue: {
+            country: 'Germany',
+            city: 'Berlin-altglienicke',
+            latitude: '52.4166667',
+            name: 'Lollapalooza Berlin',
+            region: '',
+            longitude: '13.55',
+        },
+        lineup: [
+            'The Weeknd',
+        ],
+        offers: [
+            {
+                type: 'Tickets',
+                url: 'https://www.bandsintown.com/t/1010243338?app_id=asd&came_from=267',
+                status: 'available',
+            },
+        ],
+    },
+    {
+        id: '1009408922',
+        artist_id: '1371750',
+        url: 'https://www.bandsintown.com/e/1009408922?app_id=asd&came_from=267',
+        on_sale_datetime: '',
+        datetime: '2018-09-21T14:00:00',
+        description: 'Check out our other Ticket Types:\\nPayment Plans\\nGolden Nugget Hotel Packages\\nSLS Hotel Packages\\nDowntown Grand Hotel Packages\\nPlaza Hotel Packages\\nFrom the moment the gates open until the last stream of confetti rains down, Life is Beautiful is a three-day celebration, uniting people who love music, art, food and ideas. When you put that many like-minded individuals together in the streets of Downtown Las Vegas, a surge of electricity courses through the city: Positivity prevails, culture and creativity thrive, and transformation occurs. Experience the stages, dance to the music, hear stories, try the food, hug a new friend, explore the art and meet people who will change your life.\\nReturning for its sixth year September 21–23, Life is Beautiful features marquee musicians, chefs, artists and speakers. Named "Music Festival of the Year" by Pollstar in 2017, the event attracted more than 150,000 attendees at last year’s sold-out festival and welcomed headliners including Chance the Rapper, Muse, Gorillaz, Lorde and Blink-182.\\n2018 Lineup:\\nThe Weeknd   Arcade Fire   Florence + The Machine   Travis Scott   DJ Snake   Odesza   N.E.R.D   Death Cab For Cutie   Tyler, The Creator   Justice   Bastille   Galantis   Miguel   CHVRCHES   RL Grime   Foster The People   St. Vincent   French Montana   Santigold   A$AP Ferg   Sylvan Esso   Cold War Kids   Alison Wonderland   The Neighbourhood   T-Pain   Jungle   Blood Orange   What So Not   GoldLink   Wolfmother   Blackbear   First Aid   Kit   Cashmere Cat   Daniel Caesar   Gramatik   Flight Facilities   Sabrina Claudio   The Presets   Lizzo   LAUV   SOFI TUKKER   Bazzi   DVBBS   The Drums   3LAU   Robert   DeLong   Lane 8   Tribal Seeds   AJR   Denzel Curry   Sir Sly   Ravyn Lenae   Sam Feldt   Superorganism   Party Favor   Welshly Arms   Elohim   Two Feet   Elderbrook   Hinds   FLETCHER   Mt. Joy   YUNGBLUD   Amy Shark   Mikky Ekko   Wallows   Chet Porter   Knox Fortune   lovelytheband   Graves   Harry Hudson   Brasstracks   Morgan Saint   Neil   Frances   Young Bombs   The Dirty Hooks   Mike Xavier   O Wildly\\nAll sales are final. No refunds or exchanges. Event is rain or shine. Your wristband is a ticket to Life is Beautiful 2018 Festival, and not for a specific artist. Lineup subject to change.\\nOnce you purchase, you will receive an order confirmation email from Eventbrite on behalf of Life is Beautiful.\\nIf you do not see your order confirmation in your inbox, make sure to check your junk/spam folder. If you still do not see your order confirmation, visit HERE to access the Eventbrite Help Center.\\nWristbands are non-transferable. Damaged or tampered with wristbands may not be replaced and may be voided per Life is Beautiful 2018. Treat your wristband like a valuable item. Attendees must wear wristbands at all times during attendance of Life is Beautiful 2018.\\nNeed to view or update your shipping address? Visit HERE for instructions.If you are having any other technical ticketing-related issues with your order, visit HERE to contact Eventbrite.\\nQuestions unanswered? FAQs: HERE\\nCheck out our Socials:\\nFacebook\\nTwitter\\nInstagram\\nYoutube',
+        venue: {
+            country: 'United States',
+            city: 'Las Vegas',
+            latitude: '36.1686667',
+            name: 'Life is Beautiful',
+            region: 'NV',
+            longitude: '-115.1446407',
+        },
+        lineup: [
+            'The Weeknd',
+        ],
+        offers: [
+            {
+                type: 'Tickets',
+                url: 'https://www.bandsintown.com/t/1009408922?app_id=asd&came_from=267',
+                status: 'available',
+            },
+        ],
+    },
+    {
+        id: '1010297970',
+        artist_id: '1371750',
+        url: 'https://www.bandsintown.com/e/1010297970?app_id=asd&came_from=267',
+        on_sale_datetime: '',
+        datetime: '2018-10-20T19:00:03',
+        description: '',
+        venue: {
+            country: 'Mexico',
+            city: 'Monterrey',
+            latitude: '25.6666667',
+            name: 'Live Out Festival',
+            region: '',
+            longitude: '-100.3166667',
+        },
+        lineup: [
+            'The Weeknd',
+        ],
+        offers: [
+            {
+                type: 'Tickets',
+                url: 'https://www.bandsintown.com/t/1010297970?app_id=asd&came_from=267',
+                status: 'available',
+            },
+        ],
+    },
+    {
+        id: '1010332992',
+        artist_id: '1371750',
+        url: 'https://www.bandsintown.com/e/1010332992?app_id=asd&came_from=267',
+        on_sale_datetime: '',
+        datetime: '2018-10-22T20:30:00',
+        description: "The Weeknd comenzó su carrera de forma anónima cuando irrumpió en la escena musical con el Mixtape de 2011 House of Balloons. A eso le siguió el álbum de estudio de 2013 Kiss Land y el ampliamente reconocido Beauty Behind the Madness, el cual le ganó dos premios GRAMMY en 2015, una certificación de la RIAA por triple platino por ventas acumuladas por más de 3 millones de copias, 20 certificaciones de la RIAA por canciones como \"The Hills\" (9 veces platino), \"Can't Feel My Face\" (7 veces platino), \"Often\" (3 veces platino), \"In The Night\" (2 veces platino), y \"Acquainted\" (platino). \"Earned It (Fifty Shades of Grey)\" (5 veces platino) lo hizo merecedor de su primera nominación a un premio Oscar por Mejor Canción Original. En 2016, The Weeknd lanzó su cuarto álbum de larga duración Starboy (2 veces platino), el cual rápidamente se elevó al número 1 en 90 países, y rompió el record global de streaming en menos de una semana.",
+        venue: {
+            country: 'Mexico',
+            city: 'México',
+            latitude: '19.4015408',
+            name: 'Palacio de los Deportes',
+            region: '',
+            longitude: '-99.0980606',
+        },
+        lineup: [
+            'The Weeknd',
+        ],
+        offers: [
+            {
+                type: 'Tickets',
+                url: 'https://www.bandsintown.com/t/1010332992?app_id=asd&came_from=267',
+                status: 'available',
+            },
+        ],
+    },
+    {
+        id: '1010332993',
+        artist_id: '1371750',
+        url: 'https://www.bandsintown.com/e/1010332993?app_id=asd&came_from=267',
+        on_sale_datetime: '',
+        datetime: '2018-10-23T20:30:00',
+        description: "The Weeknd comienza su carrera de forma anónima cuando irrumpía en la escena musical con el Mixtape de 2011 House of Balloons. A eso le siguió el álbum de estudio de 2013 Kiss Land y el amplia mente reconocido Beauty Behind the Madness, el cual le gano dos premios GRAMMY en 2015, una certificaciÃ³n de la RIAA por triple platino por ventas acumuladas por mÃ¡s de 3 millones de copias, 20 certificaciones de la RIAA por canciones como \"The Hills\" (9 veces platino), \"Can't Feel My Face\" (7 veces platino), \"Often\" (3 veces platino), \"In The Night\" (2 veces platino), y \"Acquainted\" (platino). \"Earned It (Fifty Shades of Grey)\" (5 veces platino) lo hizo merecedor de su primera nominación a un premio Oscar por Mejor Canción Original. En 2016, The Weeknd lanza su cuarto álbum de larga duración Starboy (2 veces platino), el cual rápidamente se eleva al numero 1 en 90 países, y rompía el récord global de streaming en menos de una semana.",
+        venue: {
+            country: 'Mexico',
+            city: 'México',
+            latitude: '19.4015408',
+            name: 'Palacio de los Deportes',
+            region: '',
+            longitude: '-99.0980606',
+        },
+        lineup: [
+            'The Weeknd',
+        ],
+        offers: [
+            {
+                type: 'Tickets',
+                url: 'https://www.bandsintown.com/t/1010332993?app_id=asd&came_from=267',
+                status: 'available',
+            },
+        ],
+    },
+    {
+        id: '1010297975',
+        artist_id: '1371750',
+        url: 'https://www.bandsintown.com/e/1010297975?app_id=asd&came_from=267',
+        on_sale_datetime: '',
+        datetime: '2018-11-23T19:00:28',
+        description: '',
+        venue: {
+            country: 'United Arab Emirates',
+            city: 'Abu Dhabi',
+            latitude: '24.4666667',
+            name: 'Abu Dhabi F1',
+            region: '',
+            longitude: '54.3666667',
+        },
+        lineup: [
+            'The Weeknd',
+        ],
+        offers: [
+            {
+                type: 'Tickets',
+                url: 'https://www.bandsintown.com/t/1010297975?app_id=asd&came_from=267',
+                status: 'available',
+            },
+        ],
+    },
+];
