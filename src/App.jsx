@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import localStorage from 'store/storages/localStorage';
 import Grid from '@material-ui/core/Grid';
 import Fade from '@material-ui/core/Fade';
 
@@ -6,6 +7,7 @@ import SearchBox from './components/SearchBox/SearchBox';
 import ArtistCard from './components/ArtistCard/ArtistCard';
 import EventsList from './components/EventsList/EventsList';
 
+import { ARTIST_STORAGE_KEY, EVENTS_STORAGE_KEY } from './config';
 import service from './service';
 
 class App extends Component {
@@ -13,8 +15,8 @@ class App extends Component {
         super(props);
 
         this.state = {
-            artist: null,
-            eventsList: null,
+            artist: JSON.parse(localStorage.read(ARTIST_STORAGE_KEY)),
+            eventsList: JSON.parse(localStorage.read(EVENTS_STORAGE_KEY)),
         };
 
         this.onSuccessfulSearch = this.onSuccessfulSearch.bind(this);
@@ -22,6 +24,7 @@ class App extends Component {
 
     onSuccessfulSearch(artist) {
         this.setState({ artist });
+        localStorage.write(ARTIST_STORAGE_KEY, JSON.stringify(artist));
 
         if (artist.upcoming_event_count > 0) {
             service.requestHelper.getArtistEvents(artist.name)
@@ -29,6 +32,7 @@ class App extends Component {
                     ({ data }) => {
                         if (data !== '') {
                             this.setState({ eventsList: data });
+                            localStorage.write(EVENTS_STORAGE_KEY, JSON.stringify(data));
                         } else {
                             this.setState({ eventsList: null });
                         }
@@ -41,6 +45,7 @@ class App extends Component {
 
     render() {
         const { artist, eventsList } = this.state;
+
         return (
             <Grid container spacing={24}>
                 <Grid item xs={12}>
@@ -49,7 +54,7 @@ class App extends Component {
                 {
                     artist !== null
                     && (
-                        <Fade in={artist !== null}>
+                        <Fade in>
                             <Grid item xs={12}>
                                 <ArtistCard artist={artist} />
                             </Grid>
@@ -57,9 +62,9 @@ class App extends Component {
                     )
                 }
                 {
-                    eventsList !== null
+                    (eventsList !== null && eventsList.length > 0)
                     && (
-                        <Fade in={eventsList !== null}>
+                        <Fade in>
                             <Grid item xs={12}>
                                 <EventsList eventsList={eventsList} />
                             </Grid>
